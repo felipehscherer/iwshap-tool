@@ -21,7 +21,7 @@ Todas as dependências serão instaladas junto ao docker, sendo elas:
 ## 1. Pré-Configurações
 Antes de tudo, é necessário clonar este repositório
 ```
-  git clone https://github.com/sf24-iwshap/sf24-iwshap
+  git clone https://github.com/felipehscherer/iwshap-tool
 ```
 
 Depois, entre no diretório clonado
@@ -116,36 +116,20 @@ O IWSHAP disponibiliza um ambiente Docker com todas as configurações e depend�
   
 </details>
 
-# ⚙️ Executando a ferramenta (Execução com os datasets reduzidos)
+# ⚙️ Executando a ferramenta
   Exemplo de execução simples:
   ```
-  python3 IWSHAP.py -s dataset/safe_dataset.csv -a dataset/attack_dataset_fabr.csv
+  python3 IWSHAP.py -s your_dataset -a your_dataset
   ```
 
   Exemplo de execução gerando gráfico summary plot:
   ```
-  python3 IWSHAP.py -s dataset/safe_dataset.csv -a dataset/attack_dataset_fabr.csv -x
+  python3 IWSHAP.py -s your_dataset -a your_dataset -x
   ```
 
   Exemplo de execução gerando gráfico summary plot e o dataset reduzido:
   ```
-  python3 IWSHAP.py -s dataset/safe_dataset.csv -a dataset/attack_dataset_fabr.csv -x -n
-  ```
-
-# ⚙️ Executando a ferramenta(Execução com os datasets completos)
-  Exemplo de execução simples:
-  ```
-  python3 IWSHAP.py -s dataset/safe_dataset_full.parquet -a dataset/attack_dataset_fabr_260h_full.parquet
-  ```
-
-  Exemplo de execução gerando gráfico summary plot:
-  ```
-  python3 IWSHAP.py -s dataset/safe_dataset_full.parquet -a dataset/attack_dataset_fabr_260h_full.parquet -x
-  ```
-
-  Exemplo de execução gerando gráfico summary plot e o dataset reduzido:
-  ```
-  python3 IWSHAP.py -s dataset/safe_dataset_full.parquet -a dataset/attack_dataset_fabr_260h_full.parquet -x -n
+  python3 IWSHAP.py -s your_dataset -a your_dataset -x -n
   ```
 
 ## Significado das flags
@@ -172,7 +156,7 @@ python3 IWSHAP.py -s <safe_path> -a <attack_path> -x -n
 - Ambiente Docker com 32gb* de ram;
 - Processador I5 (min 10º geração) ou equivalente.
 
-*Considerando o conjunto de dados completo utilizado nos experimentos.
+*Considerando o conjunto de dados com alta dimensionalidade utilizado nos experimentos.
 *Para conjuntos menores, como o dataset reduzido disponibilizado, 8gb de ram(ambiente docker) é o sufiente para a execução completa da ferramenta.
 
 ## Ambiente de teste
@@ -180,6 +164,3 @@ Para ambiente de teste fez-se o uso de um servidor com:
 - Ubuntu versão 22.04
 - AMD Ryzen 7 5800x com 8 cores
 - 64 GB de memória RAM
-
-## Executando o dataset de demonstração
-Se deseja apenas testar a ferramenta para familiarizar-se com o uso, não é necessário informar os caminhos para seus próprios datasets. É possível utilizar os datasets de demonstração incluídos, que possuem um tamanho reduzido e, consequentemente, exigem menos tempo e recursos para sua execução.
